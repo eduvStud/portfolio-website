@@ -263,6 +263,10 @@ const HomePage = () => {
                   'product': '/media/projects/product.svg',
                   'architecture': '/media/projects/architecture.svg',
                   'system integration': '/media/projects/system-integration.svg',
+                  'web-app': '/media/projects/product.svg',
+                  'design agency': '/media/projects/architecture.svg',
+                  'student accommodation': '/media/projects/architecture.svg',
+                  'clothing store': '/media/projects/ecommerce.svg',
                 };
                 const projectPreset = project?.category
                   ? projectCategoryPresets[project.category.toLowerCase()] || '/media/projects/default.svg'

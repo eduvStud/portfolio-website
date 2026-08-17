@@ -92,7 +92,7 @@ const ProjectsPage = () => {
         <section className="projects-hero">
           <div className="projects-container">
             <div className="hero-copy">
-              <span>Selected Works / 2022-2024</span>
+              <span>Selected Works / 2024-2026</span>
               <h1>
                 ENGINEERING <br /> VISUAL <br /> <span>PRECISION.</span>
               </h1>
@@ -296,7 +296,7 @@ const ProjectsPage = () => {
             <h3>
               Ready to build the <span>next</span> architecture?
             </h3>
-            <p>Currently accepting complex technical design challenges for Q3 2024.</p>
+            <p>Currently accepting complex technical design challenges for Q3 2026.</p>
             <Link to="/contact">Start a Project</Link>
           </div>
         </section>
