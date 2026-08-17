@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import BlogPage from "./pages/blog";
 import ContactPage from "./pages/contact";
 import HomePage from "./pages/homepage";
@@ -89,6 +90,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ContentProvider>
       <BrowserRouter>
+        <Analytics />
         <AnimatedRoutes />
       </BrowserRouter>
     </ContentProvider>
