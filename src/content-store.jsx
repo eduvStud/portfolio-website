@@ -67,7 +67,7 @@ export const defaultContent = {
       summary: "A digital platform designed to help students find various opportunities such as jobs and funding.",
       tags: "React, Node.js, PostgreSQL",
       caseStudyUrl: "",
-      body: "I co-developed this application for a family member in order to help bridge the gap between students and opportunities.\n\nMore details will be released closer to the release date.",
+      body: "I co-developed this application for a client in order to help bridge the gap between students and opportunities.\n\nMore details will be released closer to the release date.",
     },
     {
       slug: "student-accommodation",
