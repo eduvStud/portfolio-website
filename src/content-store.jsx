@@ -122,28 +122,13 @@ export const ContentProvider = ({ children }) => {
   const [content, setContent] = useState(cloneDefaultContent);
   const [isLoading, setIsLoading] = useState(true);
 
-  const refreshContent = async () => {
-    try {
-      const response = await fetch(`${API_URL}/content`);
-      if (response.ok) {
-        const payload = await response.json();
-        setContent(mergeContentDefaults(payload.content));
-      } else {
-        console.warn("[ContentStore] API returned " + response.status + " — using defaults");
-      }
-    } catch (err) {
-      console.warn("[ContentStore] API unreachable — using defaults. Is the backend running?", err.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => { refreshContent(); }, []);
+  // Content is hardcoded — no database needed
+  useEffect(() => { setIsLoading(false); }, []);
 
   const resetContent = () => setContent(cloneDefaultContent());
 
   return (
-    <ContentContext.Provider value={{ content, setContent, resetContent, refreshContent, isLoading }}>
+    <ContentContext.Provider value={{ content, setContent, resetContent, isLoading }}>
       {children}
     </ContentContext.Provider>
   );
