@@ -1,0 +1,16 @@
+.post-main { min-height: 70vh; padding: 144px 24px 64px; background: #131313; color: #e5e2e1; }
+.post-article { max-width: 760px; margin: 0 auto; font: 18px/1.7 Inter, sans-serif; }
+.post-article h1 { font: 700 clamp(48px, 8vw, 96px)/1 "Space Grotesk", sans-serif; margin: 24px 0; }
+.post-article > p:first-of-type, .post-back { color: #ffb4a4; font: 13px "JetBrains Mono", monospace; text-transform: uppercase; text-decoration: none; }
+.post-excerpt { color: #ababab; font-size: 24px; }
+.post-empty { display: grid; place-content: center; gap: 24px; }
+.post-empty a { color: #ffb4a4; }
+
+.post-credits-inline { margin: 8px 0 16px; color: #d1cfcf; font-size: 14px; }
+.post-credits-inline .post-credit-name { margin-right: 6px; }
+.post-credits-end { margin-top: 32px; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 16px; }
+.post-credits-end h3 { margin: 0 0 8px; font-size: 16px; }
+.post-credits-end ul { list-style: none; padding: 0; margin: 0; }
+.post-credits-end li { margin: 6px 0; }
+.post-credits-end a { color: #ffb4a4; text-decoration: none; }
+.post-credits-end a:hover { text-decoration: underline; }

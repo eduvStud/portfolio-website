@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#1a1020"/>
+    </linearGradient>
+    <linearGradient id="line1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff5733" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#ff5733" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#ff8c66" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#ff5733" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="line2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff4500" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#ff6347" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ff5733" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- speed lines -->
+  <line x1="50" y1="400" x2="250" y2="100" stroke="url(#line1)" stroke-width="2" filter="url(#glow)"/>
+  <line x1="180" y1="440" x2="380" y2="60" stroke="url(#line1)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="300" y1="420" x2="500" y2="80" stroke="url(#line2)" stroke-width="2" opacity="0.8"/>
+  <line x1="420" y1="450" x2="620" y2="40" stroke="url(#line1)" stroke-width="1" opacity="0.5"/>
+  <line x1="550" y1="430" x2="700" y2="90" stroke="url(#line2)" stroke-width="2.5" opacity="0.9"/>
+  <line x1="600" y1="460" x2="760" y2="50" stroke="url(#line1)" stroke-width="1.5" opacity="0.6"/>
+  <!-- timing nodes -->
+  <circle cx="250" cy="100" r="5" fill="#ff5733" opacity="0.9"/>
+  <circle cx="380" cy="60" r="3" fill="#ff8c66" opacity="0.6"/>
+  <circle cx="500" cy="80" r="4" fill="#ff5733" opacity="0.7"/>
+  <circle cx="700" cy="90" r="3.5" fill="#ff6347" opacity="0.8"/>
+  <!-- label -->
+  <text x="400" y="280" text-anchor="middle" fill="#ff5733" font-family="'JetBrains Mono',monospace" font-size="14" letter-spacing="0.3em" opacity="0.5">PERFORMANCE</text>
+  <text x="400" y="310" text-anchor="middle" fill="#ff5733" font-family="'Space Grotesk',sans-serif" font-size="48" font-weight="700" letter-spacing="-0.02em">LATENCY</text>
+</svg>

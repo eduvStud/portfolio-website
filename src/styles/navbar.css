@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+
+.shared-navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 50;
+	height: 64px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	background: rgba(19, 19, 19, 0.8);
+	backdrop-filter: blur(12px);
+	transition: all 0.3s ease;
+}
+
+.shared-navbar__inner {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 8px 64px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+}
+
+.shared-navbar__brand {
+	font-family: "Space Grotesk", sans-serif;
+	font-size: 28px;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+	color: #e5e2e1;
+	text-decoration: none;
+}
+
+.shared-navbar__links {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+}
+
+.shared-navbar__links a {
+	text-decoration: none;
+	color: #e4beb6;
+	font-family: "JetBrains Mono", monospace;
+	font-size: 14px;
+	line-height: 140%;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	transition: color 0.2s ease;
+}
+
+.shared-navbar__links a:hover {
+	color: #e5e2e1;
+}
+
+.shared-navbar__links a.is-active {
+	color: #ffb4a4;
+	border-bottom: 1px solid #ffb4a4;
+	padding-bottom: 4px;
+}
+
+.shared-navbar__resume {
+	border: 0;
+	background: #ff5733;
+	color: #3d0600;
+	padding: 8px 24px;
+	font-family: "JetBrains Mono", monospace;
+	font-size: 14px;
+	line-height: 140%;
+	cursor: pointer;
+	transition: opacity 0.2s ease;
+}
+
+.shared-navbar__resume:hover {
+	opacity: 0.8;
+}
+
+.shared-navbar__mobile {
+	display: none;
+	background: transparent;
+	border: 0;
+	color: #e5e2e1;
+}
+
+.nav-light {
+	background: rgba(255, 255, 255, 0.8) !important;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.nav-light .shared-navbar__brand {
+	color: #131313;
+}
+
+.nav-light .shared-navbar__links a:not(.is-active) {
+	color: #454747;
+}
+
+.nav-light .shared-navbar__links a:hover {
+	color: #131313;
+}
+
+@media (max-width: 1024px) {
+	.shared-navbar__inner {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	.shared-navbar__links,
+	.shared-navbar__resume {
+		display: none;
+	}
+
+	.shared-navbar__mobile {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+/* ── Mobile menu overlay ── */
+.shared-navbar__mobile-menu {
+  position: fixed;
+  top: 64px; /* matches navbar height */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000000; /* solid black, no transparency */
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  animation: slideDown 0.25s ease;
+  z-index: 40;
+  /* backdrop-filter removed */
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shared-navbar__mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.shared-navbar__mobile-links a,
+.shared-navbar__mobile-resume {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffffff; /* white text by default */
+  text-decoration: none;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 0.2s ease;
+}
+
+/* Orange on hover, active (tap), and current page */
+.shared-navbar__mobile-links a:hover,
+.shared-navbar__mobile-links a.is-active,
+.shared-navbar__mobile-links a:active {
+  color: #ffb4a4;
+}
+
+.shared-navbar__mobile-links a.is-active {
+  border-bottom-color: #ffb4a4;
+}
+
+.shared-navbar__mobile-resume {
+  background: #ff5733;
+  color: #3d0600; /* keep original dark text for contrast */
+  border: 0;
+  padding: 10px 24px;
+  cursor: pointer;
+  margin-top: 8px;
+  align-self: flex-start;
+  font-size: 16px;
+}
+
+.shared-navbar__mobile-resume:hover {
+  opacity: 0.8;
+}
+
+/* Burger / close icon should be white */
+.shared-navbar__mobile {
+  color: #ffffff;
+}
+
+/* ── Keep desktop styles untouched ── */
+@media (max-width: 1024px) {
+  .shared-navbar__inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .shared-navbar__links,
+  .shared-navbar__resume {
+    display: none;
+  }
+
+  .shared-navbar__mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Hide mobile menu on larger screens */
+@media (min-width: 1025px) {
+  .shared-navbar__mobile-menu {
+    display: none !important;
+  }
+}

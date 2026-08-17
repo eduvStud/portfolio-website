@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+
+.project-detail {
+  min-height: 100vh;
+  background: #131313;
+  color: #e5e2e1;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.project-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.project-empty h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.project-empty a {
+  color: #ff5733;
+  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+}
+
+.project-article {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 128px 48px 96px;
+}
+
+.project-back,
+.project-back-bottom {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ababab;
+  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 0.2s ease;
+  margin-bottom: 48px;
+}
+
+.project-back:hover,
+.project-back-bottom:hover {
+  color: #ffb4a4;
+}
+
+.project-back .material-symbols-outlined,
+.project-back-bottom .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.project-back-bottom {
+  margin-top: 80px;
+  margin-bottom: 0;
+}
+
+/* ── header ── */
+.project-header {
+  margin-bottom: 48px;
+}
+
+.project-meta-label {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: #ff5733;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+}
+
+.project-header h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.05;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  margin: 0 0 24px;
+}
+
+.project-credits-inline {
+  margin: 0 0 20px;
+  color: #d1cfcf;
+  font-size: 14px;
+}
+
+.project-credits-inline .project-credit-name {
+  margin-right: 6px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: #e4beb6;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 12px;
+  border-radius: 2px;
+}
+
+/* ── hero image ── */
+.project-hero-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 56px;
+  background: #1a1a1a;
+}
+
+.project-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── body ── */
+.project-summary {
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.project-summary h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffb4a4;
+  margin: 0 0 16px;
+}
+
+.project-summary p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #c6c6c7;
+  margin: 0;
+}
+
+.project-description p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #ababab;
+  margin: 0 0 20px;
+}
+
+.project-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── links ── */
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.project-github-link,
+.project-casestudy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  transition: all 0.25s ease;
+}
+
+.project-github-link {
+  background: rgba(255, 255, 255, 0.03);
+  color: #e5e2e1;
+}
+
+.project-github-link:hover {
+  background: rgba(255, 87, 51, 0.1);
+  border-color: #ff5733;
+  color: #ffb4a4;
+}
+
+.project-release-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  border: 1px solid rgba(255, 180, 164, 0.28);
+  border-radius: 4px;
+  background: rgba(255, 87, 51, 0.08);
+  color: #ffb4a4;
+}
+
+.project-release-badge .material-symbols-outlined {
+  font-size: 22px;
+}
+
+.project-release-badge > div {
+  display: grid;
+  gap: 2px;
+}
+
+.project-release-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ababab;
+}
+
+.project-release-badge strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffb4a4;
+}
+
+.project-casestudy-link {
+  background: rgba(96, 213, 245, 0.05);
+  color: #b0ecff;
+}
+
+.project-casestudy-link:hover {
+  background: rgba(96, 213, 245, 0.12);
+  border-color: #60d5f5;
+}
+
+.project-github-link .material-symbols-outlined,
+.project-casestudy-link .material-symbols-outlined {
+  font-size: 18px;
+}
+
+/* ── credits ── */
+.project-credits {
+  margin-top: 56px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+}
+
+.project-credits h3 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #ff5733;
+  margin: 0 0 20px;
+}
+
+.project-credits ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.project-credits li {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+}
+
+.project-credits a {
+  color: #ffb4a4;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 180, 164, 0.3);
+  transition: border-color 0.2s ease;
+}
+
+.project-credits a:hover {
+  border-color: #ffb4a4;
+}
+
+.project-credits span {
+  color: #e4beb6;
+}
+
+@media (max-width: 768px) {
+  .project-article {
+    padding: 104px 24px 64px;
+  }
+
+  .project-header h1 {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+  .project-summary p {
+    font-size: 16px;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-github-link,
+  .project-casestudy-link {
+    justify-content: center;
+  }
+
+  .project-credits {
+    padding: 24px;
+  }
+}

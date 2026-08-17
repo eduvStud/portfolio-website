@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+.shared-footer {
+	width: 100%;
+	background: #ffffff;
+	border-top: 1px solid #262626;
+	margin-top: 96px;
+}
+
+.shared-footer__inner {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 64px;
+}
+
+.shared-footer__grid {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	gap: 24px;
+	margin-bottom: 64px;
+}
+
+.shared-footer__grid > div:first-child {
+	grid-column: span 6;
+}
+
+.shared-footer__grid > div:nth-child(2),
+.shared-footer__grid > div:nth-child(3) {
+	grid-column: span 3;
+}
+
+.shared-footer__grid h2 {
+	margin: 0;
+	font-family: "Space Grotesk", sans-serif;
+	font-size: clamp(56px, 8vw, 120px);
+	line-height: 110%;
+	letter-spacing: -0.04em;
+	color: #000000;
+	opacity: 0.1;
+	user-select: none;
+}
+
+.shared-footer__grid h5 {
+	margin: 0 0 24px;
+	font-family: "JetBrains Mono", monospace;
+	font-size: 12px;
+	color: #ffb4a4;
+	text-transform: uppercase;
+}
+
+.shared-footer__grid ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.shared-footer__grid a {
+	text-decoration: none;
+	font-family: "JetBrains Mono", monospace;
+	font-size: 14px;
+	color: #ababab;
+	transition: color 0.2s ease;
+}
+
+.shared-footer__grid a:hover {
+	color: #e5e2e1;
+}
+
+.shared-footer__bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 24px;
+	padding-top: 24px;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.shared-footer__bottom p,
+.shared-footer__status span {
+	margin: 0;
+	font-family: "JetBrains Mono", monospace;
+	font-size: 12px;
+	color: #666666;
+	text-transform: uppercase;
+}
+
+.shared-footer__status {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.shared-footer__status .status-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #22c55e;
+	animation: footer-pulse 1.2s infinite;
+}
+
+@keyframes footer-pulse {
+	0% { opacity: 0.35; }
+	50% { opacity: 1; }
+	100% { opacity: 0.35; }
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+	.shared-footer__inner {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	/* Grid layout stays untouched — no column stacking */
+}
+
+/* ── Mobile: scale entire footer down to half its footprint ── */
+@media (max-width: 640px) {
+	.shared-footer {
+		margin-top: 48px; /* half of 96, so the top space shrinks too */
+		zoom: 0.5; /* scales everything (grid, fonts, padding) to 50% */
+	}
+
+	/* Keep original inner padding – zoom handles the reduction */
+	.shared-footer__inner {
+		padding: 64px;
+	}
+}

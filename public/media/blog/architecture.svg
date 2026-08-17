@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="abg" x1="0" y1="0" x2="800" y2="500">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#101820"/>
+    </linearGradient>
+    <linearGradient id="agrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60d5f5" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#4db8d9" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#60d5f5" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="aglow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#abg)"/>
+  <!-- grid lines -->
+  <g stroke="#60d5f5" stroke-width="0.5" opacity="0.15">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="167" x2="800" y2="167"/>
+    <line x1="0" y1="233" x2="800" y2="233"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="367" x2="800" y2="367"/>
+    <line x1="0" y1="433" x2="800" y2="433"/>
+    <line x1="133" y1="0" x2="133" y2="500"/>
+    <line x1="267" y1="0" x2="267" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="533" y1="0" x2="533" y2="500"/>
+    <line x1="667" y1="0" x2="667" y2="500"/>
+  </g>
+  <!-- structural blocks -->
+  <rect x="133" y="167" width="134" height="66" stroke="#60d5f5" stroke-width="1.5" fill="#60d5f5" fill-opacity="0.06" rx="2"/>
+  <rect x="267" y="100" width="266" height="133" stroke="#60d5f5" stroke-width="1.5" fill="#60d5f5" fill-opacity="0.04" rx="2"/>
+  <rect x="400" y="233" width="133" height="100" stroke="#4db8d9" stroke-width="1" fill="#4db8d9" fill-opacity="0.03" rx="2"/>
+  <rect x="533" y="167" width="134" height="133" stroke="#60d5f5" stroke-width="1.5" fill="#60d5f5" fill-opacity="0.05" rx="2"/>
+  <!-- connections -->
+  <line x1="267" y1="200" x2="400" y2="200" stroke="url(#agrad)" stroke-width="1.5" filter="url(#aglow)"/>
+  <line x1="400" y1="283" x2="533" y2="283" stroke="url(#agrad)" stroke-width="1.5" filter="url(#aglow)"/>
+  <line x1="400" y1="233" x2="400" y2="200" stroke="#60d5f5" stroke-width="1" opacity="0.5"/>
+  <!-- nodes -->
+  <circle cx="400" cy="200" r="5" fill="#60d5f5" opacity="0.9"/>
+  <circle cx="400" cy="283" r="4" fill="#4db8d9" opacity="0.7"/>
+  <circle cx="267" cy="200" r="4" fill="#60d5f5" opacity="0.6"/>
+  <circle cx="533" cy="283" r="5" fill="#60d5f5" opacity="0.8"/>
+  <!-- label -->
+  <text x="400" y="430" text-anchor="middle" fill="#60d5f5" font-family="'JetBrains Mono',monospace" font-size="14" letter-spacing="0.3em" opacity="0.5">ARCHITECTURE</text>
+  <text x="400" y="460" text-anchor="middle" fill="#60d5f5" font-family="'Space Grotesk',sans-serif" font-size="44" font-weight="700" letter-spacing="-0.02em">STRUCTURE</text>
+</svg>

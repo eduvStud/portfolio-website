@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+
+:root {
+  --about-bg: #131313;
+  --about-on: #e5e2e1;
+  --about-muted: #e4beb6;
+  --about-primary: #ffb4a4;
+  --about-primary-container: #ff5733;
+  --about-tertiary: #60d5f5;
+  --about-card: #1a1a1a;
+  --about-container: #201f1f;
+  --about-container-low: #1c1b1b;
+  --about-container-lowest: #0e0e0e;
+  --about-border: #262626;
+  --about-gap: 16px;
+  --about-margin: 64px;
+  --about-margin-sm: 24px;
+  --about-max: 1440px;
+}
+
+.about-main {
+  min-height: 100vh;
+  padding: 120px var(--about-margin-sm) var(--about-margin);
+  max-width: var(--about-max);
+  margin: 0 auto;
+  width: 100%;
+  background: var(--about-bg);
+  color: var(--about-on);
+  font-family: Inter, sans-serif;
+  box-sizing: border-box;
+}
+
+.about-main *,
+.about-main *::before,
+.about-main *::after {
+  box-sizing: border-box;
+}
+
+.about-main .material-symbols-outlined {
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.about-main .spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-main .spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 87, 51, 0.15) 0%,
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.about-main .spotlight-card:hover::before {
+  opacity: 1;
+}
+
+.about-hero {
+  position: relative;
+  margin-bottom: 128px;
+}
+
+.about-hero h1 {
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(64px, 12vw, 120px);
+  line-height: 110%;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--about-on);
+  mix-blend-mode: difference;
+}
+
+.about-hero-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+  background: rgba(255, 87, 51, 0.1);
+  filter: blur(64px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-row,
+.about-stack {
+  display: grid;
+  gap: var(--about-gap);
+  margin-bottom: var(--about-gap);
+}
+
+.about-row {
+  grid-template-columns: 1fr;
+}
+
+.about-media {
+  min-height: 300px;
+  border: 1px solid var(--about-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.about-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.7s ease;
+}
+
+.about-row-architect .about-media img {
+  filter: none;
+}
+
+.about-row-architect .about-media:hover img {
+  filter: none;
+}
+
+.about-media img.blend-luminosity {
+  mix-blend-mode: luminosity;
+}
+
+.about-media-tall {
+  height: 400px;
+}
+
+.about-media-tall img {
+  min-height: 100%;
+  height: 100%;
+}
+
+.about-panel {
+  background: var(--about-card);
+  border: 1px solid var(--about-border);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-panel-low {
+  background: var(--about-container-low);
+}
+
+.about-panel-container {
+  background: var(--about-container);
+  padding: 32px;
+}
+
+.about-panel-lowest {
+  background: var(--about-container-lowest);
+}
+
+.about-panel-inner {
+  position: relative;
+  z-index: 11;
+}
+
+.about-panel h2,
+.about-panel h3 {
+  margin: 0 0 16px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(28px, 4vw, 32px);
+  line-height: 120%;
+  font-weight: 500;
+  color: var(--about-on);
+}
+
+.about-panel p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--about-muted);
+}
+
+.about-panel p.lead,
+.about-row-architect .about-panel p {
+  font-size: 18px;
+}
+
+.text-primary {
+  color: var(--about-primary) !important;
+}
+
+.text-tertiary {
+  color: var(--about-tertiary) !important;
+}
+
+.about-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.about-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--about-border);
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--about-muted);
+}
+
+.about-list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.about-list .material-symbols-outlined {
+  color: var(--about-primary-container);
+  flex-shrink: 0;
+}
+
+.about-arsenal {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.about-arsenal-card {
+  padding: 16px;
+  background: var(--about-card);
+  border: 1px solid var(--about-border);
+  border-radius: 2px;
+}
+
+.about-arsenal-card .arsenal-label {
+  margin: 0 0 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.about-arsenal-card p:last-child {
+  margin: 0;
+  color: var(--about-on);
+}
+
+@media (min-width: 768px) {
+  .about-main {
+    padding-left: var(--about-margin);
+    padding-right: var(--about-margin);
+  }
+
+  .about-row-architect,
+  .about-row-genesis,
+  .about-row-systems {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .about-row-architect .about-media,
+  .about-row-genesis .about-media,
+  .about-row-systems .about-media {
+    grid-column: span 4;
+  }
+
+  .about-row-architect .about-panel,
+  .about-row-genesis .about-panel,
+  .about-row-systems .about-panel {
+    grid-column: span 8;
+    padding: 48px;
+  }
+
+  .about-row-academic,
+  .about-row-beyond,
+  .about-row-arsenal {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .about-row-academic .about-panel,
+  .about-row-beyond .about-panel,
+  .about-row-arsenal .about-panel {
+    grid-column: span 7;
+  }
+
+  .about-row-beyond .about-panel,
+  .about-row-arsenal .about-panel {
+    padding: 48px;
+  }
+
+  .about-row-academic .about-media,
+  .about-row-beyond .about-media,
+  .about-row-arsenal .about-media {
+    grid-column: span 5;
+  }
+
+  .about-media-tall {
+    height: 500px;
+  }
+
+  .about-arsenal {
+    grid-template-columns: 1fr 1fr;
+  }
+}

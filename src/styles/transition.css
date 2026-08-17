@@ -1,0 +1,43 @@
+.route-transition {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.route-transition.is-active {
+  visibility: visible;
+}
+
+.route-transition__panels {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.route-transition__panel {
+  flex: 1;
+  height: 100%;
+  transform: translateY(-120%);
+  will-change: transform;
+}
+
+.route-transition__message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0 1rem;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(0.82rem, 2.2vw, 1.15rem);
+  line-height: 1.45;
+  opacity: 0;
+  will-change: opacity;
+}
