@@ -131,6 +131,7 @@ const ImageUploadField = ({ label, value, onChange, token }) => {
 const AdminPage = () => {
   const { content, setContent } = useContent();
   const [token, setToken] = useState(() => sessionStorage.getItem("portfolio-admin-token"));
+  const isReadonly = token === "readonly";
   const [section, setSection] = useState("overview");
   const [inquiries, setInquiries] = useState([]);
   const [message, setMessage] = useState("");
@@ -142,7 +143,7 @@ const AdminPage = () => {
   useEffect(() => {
     if (token) loadInquiries();
   }, [token]);
-  const persist = async (nextContent) => {
+  const persist = async (nextContent) => { if (isReadonly) { setMessage("Read-only mode — changes cannot be saved."); return; }
     const response = await fetch(`${API_URL}/content`, {
       method: "PUT",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
@@ -180,6 +181,12 @@ const AdminPage = () => {
     <>
       <Navbar brand={content.profile.shortName} brandHref="/" showResume={false} links={[{ label: "View site", href: "/" }]} />
       <main className="control-main">
+          {isReadonly && (
+            <div className="readonly-banner">
+              <span className="material-symbols-outlined">visibility</span>
+              Read-only mode — you can explore but cannot make changes.
+            </div>
+          )}
         <aside className="control-sidebar">
           <div>
             <p className="control-kicker">Control center</p>
@@ -206,6 +213,7 @@ const AdminPage = () => {
             className="control-signout"
             onClick={() => {
               sessionStorage.removeItem("portfolio-admin-token");
+              sessionStorage.removeItem("portfolio-readonly");
               setToken("");
             }}
           >
@@ -254,7 +262,7 @@ const AdminPage = () => {
           {section === "settings" && <Settings content={content} onSave={persist} token={token} />}
         </section>
       </main>
-      {editor && <ContentEditor editor={editor} token={token} onClose={() => setEditor(null)} onSave={updateCollection} />}
+      {editor && <ContentEditor editor={editor} token={token} isReadonly={isReadonly} onClose={() => setEditor(null)} onSave={updateCollection} />}
       <Footer brand={content.profile.name} />
     </>
   );
@@ -413,7 +421,7 @@ const Inquiries = ({ items, onStatus }) => (
             </div>
             <span>{item.projectType}</span>
             <p>{item.message}</p>
-            <select value={item.status} onChange={(event) => onStatus(item.id, event.target.value)} aria-label={`Status for ${item.name}`}>
+            <select value={item.status} onChange={(event) => onStatus(item.id, event.target.value)} disabled={isReadonly} aria-label={`Status for ${item.name}`}>
               <option value="new">New</option>
               <option value="reviewed">Reviewed</option>
               <option value="responded">Responded</option>
@@ -468,7 +476,7 @@ const Settings = ({ content, onSave, token }) => {
   );
 };
 
-const ContentEditor = ({ editor, token, onClose, onSave }) => {
+const ContentEditor = ({ editor, token, isReadonly, onClose, onSave }) => {
   const [draft, setDraft] = useState(editor.item);
   const fields =
     editor.type === "posts"
@@ -616,7 +624,7 @@ const ContentEditor = ({ editor, token, onClose, onSave }) => {
           <button type="button" onClick={onClose}>
             Cancel
           </button>
-          <button type="submit">Save record</button>
+          <button type="submit" disabled={isReadonly}>{isReadonly ? "Read-only" : "Save record"}</button>
         </footer>
       </form>
     </div>

@@ -15,7 +15,7 @@ const FAQS = [
   },
   {
     q: "What is your primary technology stack?",
-    a: "I specialize in Next.js, TypeScript, Tailwind CSS, and headless architectures like Sanity or Strapi. I prioritize performant, type-safe, and scalable systems.",
+    a: "I specialize in Node.js, JavaScript, Tailwind CSS, and react.",
   },
 ];
 
@@ -329,8 +329,8 @@ const ContactPage = () => {
         {/* Marquee */}
         <div className="marquee">
           <div className="marquee-track" aria-hidden="true">
-            <span>Available for Projects 2024 &bull; Architecture &bull; Engineering &bull; Strategy &bull;</span>
-            <span>Available for Projects 2024 &bull; Architecture &bull; Engineering &bull; Strategy &bull;</span>
+            <span>Available for Projects 2026 &bull; Architecture &bull; Engineering &bull; Strategy &bull;</span>
+            <span>Available for Projects 2026 &bull; Architecture &bull; Engineering &bull; Strategy &bull;</span>
           </div>
         </div>
 

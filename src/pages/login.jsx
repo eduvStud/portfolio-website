@@ -10,6 +10,11 @@ const LoginPage = () => {
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const viewAsGuest = () => {
+    sessionStorage.setItem("portfolio-admin-token", "readonly");
+    navigate("/admin", { replace: true });
+  };
+
   const submit = async (event) => {
     event.preventDefault();
     setError("");
@@ -41,6 +46,7 @@ const LoginPage = () => {
           {error && <p className="login-error" role="alert">{error}</p>}
           <button type="submit" disabled={isSubmitting}>{isSubmitting ? "Signing in..." : "Sign in"}</button>
         </form>
+        <button type="button" className="login-guest-btn" onClick={viewAsGuest}>View dashboard as guest</button>
         <Link className="login-return" to="/">Return to public site</Link>
       </section>
     </main>
