@@ -60,10 +60,10 @@ export const defaultContent = {
     },
     {
       slug: "student-preparation-platform",
-      title: "Growlink",
+      title: "student preparation platform",
       year: "2026",
       category: "Web-app",
-      image: "media/growlink.jpeg",
+      image: "media/growlink.jpe",
       summary: "A digital platform designed to help students find various opportunities such as jobs and funding.",
       tags: "React, Node.js, PostgreSQL",
       caseStudyUrl: "",
